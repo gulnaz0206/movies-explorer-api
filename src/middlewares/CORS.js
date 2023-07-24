@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://movies',
-  'http://movies',
+  'https://movie.nomoredomains.xyz',
+  'http://movie.nomoredomains.xyz',
 ];
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 const CORS = (req, res, next) => {
