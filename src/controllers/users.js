@@ -7,7 +7,7 @@ const NotFound = require('../errors/NotFound');
 const Conflict = require('../errors/Conflict');
 const { validationError, NotFoundUser, UserAlreadyExist } = require('../utils/errorMessage');
 
-const { NODE_ENV, JWT_SECRET } = process.env;
+// const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})

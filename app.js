@@ -8,10 +8,9 @@ const { CORS } = require('./src/middlewares/CORS');
 const { requestLogger, errorLogger } = require('./src/middlewares/logger');
 const rateLimit = require('./src/middlewares/rateLimit');
 const errorHandle = require('./src/middlewares/errorHandle');
-const routes = require('./src/routes/index');
+const router = require('./src/routes/index');
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb' } = process.env;
-
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -21,7 +20,7 @@ app.use(CORS);
 mongoose.connect(DB_URL)
   .then(() => console.log('connected'))
   .catch((err) => console.log(`Ошибка ${err}: ${err.message}`));
-app.use(routes);
+app.use(router);
 app.use(requestLogger);
 app.use(rateLimit);
 app.use(errorLogger);

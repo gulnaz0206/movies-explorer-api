@@ -10,7 +10,7 @@ const {
   deletedMovie,
 } = require('../utils/errorMessage');
 
-module.exports.getUsersMovie = (req, res, next) => {
+module.exports.getUsersMovies = (req, res, next) => {
   Movie.find({ owner: req.user._id })
     .then((movie) => res.status(200).send({ data: movie }))
     .catch(next);
