@@ -52,7 +52,7 @@ const movieValidation = celebrate({
     movieId: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
-  });
+  }),
 });
 
 const movieIdValidation = celebrate({
